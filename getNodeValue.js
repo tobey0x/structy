@@ -26,8 +26,25 @@ const getNodeValue = (head, index) => {
     }
 }
 
+// Recuuursion
+const reGetNodeValue = (head, index) => {
+    let count = index;
+    if (head === null) return null;
+    if (index === 0) return head.val;
+    count--;
+    return reGetNodeValue(head.next, count)
+}
+
+const node1 = new Node("banana");
+const node2 = new Node("mango");
+
+node1.next = node2;
+
+// banana -> mango
+
+console.log(reGetNodeValue(node1, 0));
 
 
-console.log(getNodeValue(a, 2));
-console.log(getNodeValue(a, 3));
-console.log(getNodeValue(a, 7));
+console.log(reGetNodeValue(a, 2));
+console.log(reGetNodeValue(a, 3));
+console.log(reGetNodeValue(a, 7));
