@@ -16,4 +16,17 @@ a.next = b;
 b.next = c;
 c.next = d;
 d.next = e;
-e.next = f;
+e.next = f; 
+
+const reverseList = (head) => {
+    let prev = null;
+    let current = head;
+    while (current !== null) {
+        const next = current.next;
+        current.next = prev;
+        [prev, current = [current, next];
+    }
+    return prev
+}
+
+console.log(reverseList(a))
